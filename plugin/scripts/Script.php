@@ -42,6 +42,11 @@ if (isset ( $_REQUEST ['bootstrap'] )) {
 	$indice ++;	
 }
 
+if (isset ( $_REQUEST ['bootstrap-validation'] ) ) {
+	$funcion [$indice] = 'bootstrap/bootstrap-3.3.5-dist/js/validator.js';
+	$indice ++;
+}
+
 foreach ( $funcion as $nombre ) {
     echo "<script type='text/javascript' src='" . $host . $sitio . '/plugin/scripts/' . $nombre . "'></script>\n";
 }
