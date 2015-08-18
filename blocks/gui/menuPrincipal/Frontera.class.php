@@ -1,5 +1,5 @@
 <?php
-namespace reportes\menuIngreso;
+namespace gui\menuPrincipal;
 if (! isset ( $GLOBALS ["autorizado"] )) {
 	include ("../index.php");
 	exit ();

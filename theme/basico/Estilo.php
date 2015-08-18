@@ -10,7 +10,7 @@ $indice ++;
 $host = $this->miConfigurador->getVariableConfiguracion ( "host" );
 $sitio = $this->miConfigurador->getVariableConfiguracion ( "site" );
 
-if (isset ( $_REQUEST ['jquery'] )) {
+if (isset ( $_REQUEST ['jquery-ui'] )) {
 	$estilo [$indice] = "estiloFormulario.css";
 	$indice ++;
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace reportes\menuIngreso\menu;
+namespace gui\menuPrincipal\builder;
 
 if (! isset ( $GLOBALS ['autorizado'] )) {
 	include ('index.php');

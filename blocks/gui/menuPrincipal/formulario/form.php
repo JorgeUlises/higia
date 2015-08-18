@@ -1,6 +1,8 @@
 <?php
 include_once ($this->ruta . "/builder/DibujarMenu.class.php");
-use reportes\menuIngreso\menu\Dibujar;
+use gui\menuPrincipal\builder\Dibujar;
+// include_once ($this -> ruta . 'funcion/GetLink.php');
+// use gui\menuPrincipal\funcion\GetLink;
 
 $directorio = $this->miConfigurador->getVariableConfiguracion ( "host" );
 $directorio .= $this->miConfigurador->getVariableConfiguracion ( "site" ) . "/index.php?";
@@ -8,15 +10,29 @@ $directorio .= $this->miConfigurador->getVariableConfiguracion ( "enlace" );
 
 $esteBloque=$this->miConfigurador->getVariableConfiguracion ( 'esteBloque' );
 
-$valorCodificado = "action=loginSso";//Es el nombre del directorio del bloque :P
-$valorCodificado .= "&pagina=" . $this->miConfigurador->getVariableConfiguracion ( 'pagina' );
+$paginas = [ 
+	'modalidad',
+	'agenda',
+	'profesional',
+	'cita',
+	'reportes',
+	'usuario'
+];
 
-$valorCodificado .= "&bloque=loginSso";
-$valorCodificado .= "&bloqueGrupo=";
-$valorCodificado .= "&opcion=logout";
-$valorCodificado = $this->miConfigurador->fabricaConexiones->crypto->codificar ( $valorCodificado );
+$enlaces = array ();
 
-$enlaces['Logout'] = $directorio.'='.$valorCodificado;
+foreach ( $paginas as $pagina ) {
+	$enlace = 'pagina=' . $pagina;
+	$enlace = $this->miConfigurador->fabricaConexiones->crypto->codificar_url ( $enlace, $directorio );
+	//$enlace = GetLink::obtener($pagina);
+	$nombrePagina = $this->lenguaje->getCadena ( $pagina );
+	$enlaces[$nombrePagina] = $enlace;
+}
+
+$enlaces[$this->lenguaje->getCadena ( 'sesion' )]=array(
+	'usuario registrado'=>'#',
+	'logout'=>'#',	
+);
 
 $atributos ['enlaces'] = $enlaces;
 

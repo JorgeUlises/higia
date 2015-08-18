@@ -1,6 +1,6 @@
 <?php
 
-namespace reportes\menuIngreso;
+namespace gui\menuPrincipal;
 // Evitar un acceso directo a este archivo
 if (! isset ( $GLOBALS ["autorizado"] )) {
 	include ("../index.php");
