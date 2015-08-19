@@ -17,7 +17,7 @@
 		      </ul>
 		    </li>
 		<?php else: ?>
-			<li class='linkMenu'><a href='$enlace'><?php echo $nombrePagina ?></a></li>
+			<li class='linkMenu'><a href='<?php echo $enlace ?>'><?php echo $nombrePagina ?></a></li>
 		<?php endif; ?>
 	<?php endforeach; ?>
   </ul>

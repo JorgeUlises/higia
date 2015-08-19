@@ -10,7 +10,7 @@
 
 $indice=0;
 $funcion[$indice++]='lib/moment.min.js';
-$funcion[$indice++]='lib/jquery.min.js';
+//$funcion[$indice++]='lib/jquery.min.js';
 $funcion[$indice++]='fullcalendar.js';
 $funcion[$indice++]='lang-all.js';
 // $plugin[$indice]=true;//para bootstrap.min.js

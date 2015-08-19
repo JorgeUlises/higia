@@ -83,10 +83,10 @@ function loadCalendar<?php echo $this->atributos['id']?>(data) {
 			 return false;
 		 }
 		 
-		 if (isOutPeriod({start:start,end:end})) {
-			 $.juu.display('Está asignando una actividad fuera del Periodo.');
-			 return false;
-		 }
+// 		 if (isOutPeriod({start:start,end:end})) {
+// 			 $.juu.display('Está asignando una actividad fuera del Periodo.');
+// 			 return false;
+// 		 }
 		 
 		var onSave = function(contenido) {
 			var attr = $.juu.formToAttrObject(contenido);
@@ -184,7 +184,7 @@ function loadCalendar<?php echo $this->atributos['id']?>(data) {
 			center : 'title',
 			right : 'month,agendaWeek,agendaDay,today'
 		},
-		defaultDate : '2015-02-12',
+		//defaultDate : '2015-02-12',
 		annotations: [{
             start: new Date('2015-02-11'),
             end: new Date('2015-02-12'),
