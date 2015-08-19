@@ -78,10 +78,10 @@ function loadCalendar<?php echo $this->atributos['id']?>(data) {
 	
 	var selectListener = function(start, end) {
 		
-		 if (isOverlapping({start:start,end:end})) {
-			 $.juu.display('Ya hay una actividad en ese horario.');
-			 return false;
-		 }
+		 // if (isOverlapping({start:start,end:end})) {
+			 // $.juu.display('Ya hay una actividad en ese horario.');
+			 // return false;
+		 // }
 		 
 // 		 if (isOutPeriod({start:start,end:end})) {
 // 			 $.juu.display('Está asignando una actividad fuera del Periodo.');
